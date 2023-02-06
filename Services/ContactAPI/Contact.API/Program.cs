@@ -16,6 +16,12 @@ builder.Services.AddSwaggerGen();
 //    options.ListenAnyIP(7001, configure => configure.UseHttps()); // to listen for incoming https connection on port 7001
 //});
 
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(7001); // to listen for incoming http connection on port 5001
+    options.ListenAnyIP(5002, configure => configure.UseHttps()); // to listen for incoming https connection on port 7001
+});
+
 builder.Services.AddScoped<IContactService, ContactService>();
 
 var app = builder.Build();

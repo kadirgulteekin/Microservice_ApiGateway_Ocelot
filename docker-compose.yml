@@ -1,0 +1,49 @@
+version: '3.4'
+
+services:
+  s_apigateway:
+    container_name: c_apigateway
+    image: kadirgultekin/apigateway
+    build:
+      context: .
+      dockerfile: APIGateway/Dockerfileway/Dockerfie
+    networks:
+      - net_api
+      - int_net_api
+    ports:
+      - 80:80
+   
+
+  s_contact_api:
+    container_name: c_contact_api
+    image: salihcantekin/contactapi
+    build:
+      context: .
+      dockerfile: Services/Contact.API/Contact.API/Dockerfile
+    networks:
+      - int_net_api
+    ports:
+      - 9000:9000
+   
+
+
+   
+  s_res_api:
+    container_name: c_res_api
+    image: salihcantekin/resapi
+    build:
+      context: .
+      dockerfile: Services/Reservation.API/Reservation.API/Dockerfile
+    networks:
+      - int_net_api
+    ports:
+      - 7000:7000    
+
+
+
+networks:
+  int_net:
+    driver: overlay
+    internal: true
+  micro:net:
+    driver: bridge

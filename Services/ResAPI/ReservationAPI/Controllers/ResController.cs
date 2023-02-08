@@ -12,7 +12,7 @@ namespace Reservation.API.Controllers
 
         public ResController(IReservationService ReservationService)
         {
-            this.reservationService = ReservationService;
+            reservationService = ReservationService;
         }
 
 

@@ -1,7 +1,7 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/res/{api}",
+      "DownstreamPathTemplate": "/api/res/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -13,7 +13,7 @@
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
-      "DownstreamPathTemplate": "/api/contact/{api}",
+      "DownstreamPathTemplate": "/api/contact/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {

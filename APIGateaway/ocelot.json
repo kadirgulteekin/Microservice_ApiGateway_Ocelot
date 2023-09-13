@@ -1,7 +1,7 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/res/{id}",
+      "DownstreamPathTemplate": "/api/res/{id}",    //bu path'e gelenleri hangi adrese gödereyim
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -9,7 +9,7 @@
           "Port": 7000
         }
       ],
-      "UpstreamPathTemplate": "/r/{id}",
+      "UpstreamPathTemplate": "/r/{id}",   //dışardan bize gelen
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
